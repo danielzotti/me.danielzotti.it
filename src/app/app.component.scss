@@ -1,0 +1,48 @@
+.loading-container {
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background-color:rgba(255,255,255,0.8);
+}
+.loading-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.coffee-svg {
+    width: 160px;
+    height: 150px;
+    @media(min-width:600px){
+        width: 450px;
+        height: 450px;
+    }
+}
+.coffee-message {
+    position: absolute;
+    left:0;
+    right:0;
+    text-align: center;
+    bottom:0px;
+    font-size: 13px;
+    @media(min-width:600px){
+        bottom:10px;
+        font-size: 25px;
+    }
+}
+.coffee-message-inner {
+    display: inline-block;
+    position: relative;
+    margin:0 auto;
+    background-color:rgba(0,0,0,0.65);
+    color:#FFF;
+    border-radius: 5px;
+    padding:2px 5px;
+    @media(min-width:600px){
+        bottom:10px;
+        font-size: 25px;
+        padding:3px 10px;
+    }
+}

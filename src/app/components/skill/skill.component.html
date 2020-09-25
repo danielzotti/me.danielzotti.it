@@ -1,0 +1,8 @@
+<div>
+  <span class="skill-image">
+    <img src="assets/images/icons/icon-{{image}}.png" title="{{name}}" alt="{{name}}"/>
+  </span>
+  <span class="skill-value">
+    <i [ngClass]="{'x': (x <= value) }" *ngFor="let x of [1,2,3,4,5]"></i>
+  </span>
+</div>

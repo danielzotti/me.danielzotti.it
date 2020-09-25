@@ -1,0 +1,13 @@
+//VARIABLES
+$font-family-title:Exo,Georgia,serif;
+$font-family-text:'Roboto Condensed',Verdana,Helvetica,Arial,sans-serif;
+
+//BREAKPOINT
+$xxs-max: 450px;
+$xs-min: $xxs-max + 1px;
+$xs-max: 767px;
+$sm-min: $xs-max + 1px;
+$sm-max: 991px;
+$md-min: $sm-max + 1px;
+$md-max: 1199px;
+$lg-min: $md-max + 1px;

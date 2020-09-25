@@ -1,0 +1,151 @@
+<!--<span class="beta">beta</span>-->
+<span class="version">v0.0.2</span>
+<div class="banner">
+  <div class="container">
+    <div class="brand">
+      <div class="logo">
+        <img src="assets/images/logo-blu-sfumato.png" alt="DZ Logo blu">
+      </div>
+      <h1 class="name">
+        <div>DANIEL ZOTTI</div>
+        <div class="work">creative web developer</div>
+      </h1>
+    </div>
+    <div class="videoprofile">
+      <img src="/assets/videoprofile/videoprofile.gif" alt="Video profile animated loop"/>
+      <!-- <video id="video-daniel" autoplay preload playsinline loop muted poster="/assets/videoprofile/videoprofile.jpg">
+        <source src="/assets/videoprofile/videoprofile.mp4" type="video/mp4">
+        <source src="/assets/videoprofile/videoprofile-small.webm" type="video/webm" media="screen and (max-device-width:500px)">
+        <source src="/assets/videoprofile/videoprofile-medium.webm" type="video/webm" media="screen and (min-device-width::501px) and (max-device-width:1000px)">
+        <source src="/assets/videoprofile/videoprofile.webm" type="video/webm" media="screen and (min-device-width::1001px)"> 
+        <source src="/assets/videoprofile/videoprofile-small.mp4" type="video/mp4" media="screen and (max-device-width:500px)">
+        <source src="/assets/videoprofile/videoprofile-medium.mp4" type="video/mp4" media="screen and (min-device-width::501px) and (max-device-width:1000px)">
+        <source src="/assets/videoprofile/videoprofile.mp4" type="video/mp4" media="screen and (min-device-width::1001px)">
+      </video> -->
+    </div>
+  </div>
+</div>
+
+<div class="cv-container">
+  <div class="container">
+
+    <div class="row">
+      <div class="col-xs-12 col-md-4">
+        <div class="cv-info">
+          <h2 class="cv-title">Personal info</h2>
+          <div class="cv-list">
+            <div class="row">
+              <div class="col-xs-12 col-sm-6 col-md-12">
+                <dz-info [icon]="info.icon" [text]="info.text" [link]="info.link" *ngFor="let info of personalInfoLeft">
+                </dz-info>
+              </div>
+              <div class="col-xs-12 col-sm-6 col-md-12">
+                <dz-info [icon]="info.icon" [text]="info.text" [link]="info.link"
+                  *ngFor="let info of personalInfoRight"></dz-info>
+              </div>
+            </div>
+          </div>
+          <div class="cv-download-container">
+            <h2 class="cv-title">Curriculum</h2>
+            <div class="cv-lang">
+              <a href="/assets/cv/Daniel Zotti Curriculum English.pdf" target="_blank" rel="noopener">
+                English
+              </a>
+            </div>
+            <span>/</span>
+            <div class="cv-lang">
+              <a href="/assets/cv/Daniel Zotti Curriculum Italiano.pdf" target="_blank" rel="noopener">
+                Italiano
+              </a>
+            </div>
+          </div>
+          <div class="cv-websites-container">
+            <h2 class="cv-title">My websites</h2>
+            <ul class="cv-websites-list">
+              <li class="cv-website">
+                <a href="http://matrimonio.danielzotti.it" target="_blank" rel="noopener">
+                  my wedding
+                </a>
+              </li>
+              <li class="cv-website">
+                <a href="http://carnevale.aperitivoinE3.it" target="_blank" rel="noopener">
+                  carnival aperitif
+                </a>
+              </li>
+              <li class="cv-website">
+                <a href="http://natale.aperitivoinE3.it" target="_blank" rel="noopener">
+                  christmas aperitif
+                </a>
+              </li>
+              <li class="cv-website">
+                <a href="http://11111.danielzotti.it" target="_blank" rel="noopener">
+                  11.111 days of life
+                </a>
+              </li>
+              <li class="cv-website">
+                <a href="http://projects.danielzotti.it/lavagna-tecnologica/" target="_blank" rel="noopener">
+                  technological blackboard
+                </a>
+              </li>
+              <li class="cv-website">
+                <a href="http://projects.danielzotti.it/blinking" target="_blank" rel="noopener">
+                  blinking (3D)
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-8">
+        <div class="cv-skills">
+          <h2 class="cv-title">Professional skills</h2>
+          <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+              <h3 class="cv-title subtitle">Frontend</h3>
+              <div class="cv-list">
+                <dz-skill [name]="skill.name" [image]="skill.image" [value]="skill.value"
+                  *ngFor="let skill of frontendSkills"></dz-skill>
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+              <h3 class="cv-title subtitle">Backend</h3>
+              <div class="cv-list">
+                <dz-skill [name]="skill.name" [image]="skill.image" [value]="skill.value"
+                  *ngFor="let skill of backendSkills"></dz-skill>
+              </div>
+            </div>
+
+            <div class="col-xs-12 col-lg-4">
+              <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-12">
+                  <h3 class="cv-title subtitle">CMS</h3>
+                  <div class="cv-list">
+                    <dz-skill [name]="skill.name" [image]="skill.image" [value]="skill.value"
+                      *ngFor="let skill of cmsSkills"></dz-skill>
+                  </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-12">
+                  <h3 class="cv-title subtitle">Graphic</h3>
+                  <div class="cv-list">
+                    <dz-skill [name]="skill.name" [image]="skill.image" [value]="skill.value"
+                      *ngFor="let skill of graphicSkills"></dz-skill>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="cv-opensource-projects">
+          <h2 class="cv-title">Open Source</h2>
+          <h3 class="cv-subtitle">my main contribution to the open source community</h3>
+          <div class="cv-projects-container">
+            <ng-container *ngFor="let project of opensourceProjects">
+              <dz-project-box [name]="project.name" [description]="project.description" [url]="project.url"
+                [image]="project.image" [isInverse]="project.isInverse"></dz-project-box>
+            </ng-container>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

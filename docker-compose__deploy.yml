@@ -1,0 +1,20 @@
+version: '3.7'
+
+services:
+
+  deploy:
+    restart: unless-stopped
+    container_name: danielzotti
+    build:
+      context: .
+      dockerfile: Dockerfile__deploy
+    ports:
+      - '4001:4000'
+    environment:
+      - "VIRTUAL_HOST=${VIRTUAL_HOST:-www.danielzotti.it}"
+      - "VIRTUAL_PORT=${VIRTUAL_PORT:-443}"
+
+networks:
+  default:
+    external:
+      name: nginx-proxy

@@ -1,0 +1,61 @@
+@import "variables";
+.videoprofile {
+    text-align: center;
+    
+
+    video {
+        max-width: 100%;
+    }
+}
+
+.banner {
+    .videoprofile, .logo, .name, .brand {
+        display: inline-block;
+        vertical-align: middle;
+    }
+    .videoprofile {
+        width: 100%;
+        max-width: 400px;
+        @media(min-width:$sm-min){
+            width: 40%;
+        }
+        @media(min-width:$md-min){
+            width: 50%;
+        }
+        img {
+            width: 100%;
+        }
+
+    }
+    .brand {
+        @media(min-width:$sm-min){
+            width: 60%;
+        }
+        @media(min-width:$md-min){
+            width: 50%;
+        }
+        @media(min-width:$xs-min) and (max-width:$xs-max) {
+            margin-bottom: 20px;
+        }
+    }
+    .name {
+        margin:0;
+        @media(max-width:$xs-max){
+            font-size: 40px;
+        }
+    }
+}
+.cv-opensource-projects {
+    font-size:0;
+    margin-left: -10px;
+    margin-right: -10px;
+    dz-project-box {
+        display: block;
+        padding:10px;
+        @media(min-width:$sm-min){
+            vertical-align: top;
+            display: inline-block;
+            width: 50%;
+        }
+    }
+}

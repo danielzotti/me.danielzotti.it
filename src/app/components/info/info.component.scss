@@ -1,0 +1,31 @@
+@import "colors.scss";
+@import "variables.scss";
+
+:host {
+    display: block;
+    position: relative;
+    .icon {
+        width:70px;
+        font-size: 2em;
+        color:$blue;
+        text-align:center;
+        display: block;
+        margin:0 auto;
+        @media(min-width:$sm-min) {
+            vertical-align: middle;
+            display: inline-block;
+        }
+        i:first-child {
+            color:$blue;
+        }
+        i:last-child {
+            color:$white;
+        }
+    }
+    .text {
+        @media(min-width:$sm-min) {
+            vertical-align: middle;
+        }
+        
+    }
+}

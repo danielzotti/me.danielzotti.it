@@ -1,0 +1,21 @@
+cache:
+  paths:
+    - node_modules/
+
+deploy_test:
+  stage: deploy
+  environment: Test
+  script: "VIRTUAL_HOST=www.danielzotti.ovh docker-compose -f docker-compose__deploy.yml -p danielzotti up -d --build"
+  only:
+    - dev
+  tags:
+    - "contabo"
+
+deploy_prod:
+  stage: deploy
+  environment: Production
+  script: "VIRTUAL_HOST=www.danielzotti.it docker-compose -f docker-compose__deploy.yml -p danielzotti up -d --build"
+  only:
+    - tags
+  tags:
+    - "ovh"

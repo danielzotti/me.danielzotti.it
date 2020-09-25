@@ -1,0 +1,37 @@
+.banner {
+    background-color: $black;
+    font-size: 0;
+    padding:5px;
+    text-align: center;
+    @media(min-width:$sm-min) {
+        padding: 50px 0;
+        text-align: left;
+    }
+
+    .logo,.name {
+        position: relative;
+        vertical-align: middle;
+        padding:10px;
+        line-height: 1;
+        @media(min-width:$sm-min) {
+            display: inline-block;
+        }
+    }
+    .logo {
+        img {
+            max-width: 200px;
+            @media(min-width:$sm-min) {
+                max-width: 300px;
+            }
+        }
+    }
+    .name {
+        color:$white;
+        font-size:60px;
+        font-weight: 200;
+        .work {
+            font-size:30px;
+            font-weight: 100;
+        }
+    }
+}
