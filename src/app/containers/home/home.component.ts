@@ -1,5 +1,6 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpResponse } from '@angular/common/http';
+import { version } from '../../../../package.json';
 
 @Component({
     selector: 'dz-home',
@@ -18,6 +19,8 @@ export class HomeComponent implements OnInit {
     public graphicSkills: Array<any>;
     public cmsSkills: Array<any>;
     public opensourceProjects: Array<any>;
+
+    public version: string = version;
 
     constructor(
         private http: HttpClient,

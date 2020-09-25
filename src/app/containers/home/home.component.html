@@ -1,5 +1,5 @@
 <!--<span class="beta">beta</span>-->
-<span class="version">v0.0.2</span>
+<span class="version">v{{version}}</span>
 <div class="banner">
   <div class="container">
     <div class="brand">
@@ -41,7 +41,7 @@
               </div>
               <div class="col-xs-12 col-sm-6 col-md-12">
                 <dz-info [icon]="info.icon" [text]="info.text" [link]="info.link"
-                  *ngFor="let info of personalInfoRight"></dz-info>
+                         *ngFor="let info of personalInfoRight"></dz-info>
               </div>
             </div>
           </div>
@@ -104,14 +104,14 @@
               <h3 class="cv-title subtitle">Frontend</h3>
               <div class="cv-list">
                 <dz-skill [name]="skill.name" [image]="skill.image" [value]="skill.value"
-                  *ngFor="let skill of frontendSkills"></dz-skill>
+                          *ngFor="let skill of frontendSkills"></dz-skill>
               </div>
             </div>
             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
               <h3 class="cv-title subtitle">Backend</h3>
               <div class="cv-list">
                 <dz-skill [name]="skill.name" [image]="skill.image" [value]="skill.value"
-                  *ngFor="let skill of backendSkills"></dz-skill>
+                          *ngFor="let skill of backendSkills"></dz-skill>
               </div>
             </div>
 
@@ -121,14 +121,14 @@
                   <h3 class="cv-title subtitle">CMS</h3>
                   <div class="cv-list">
                     <dz-skill [name]="skill.name" [image]="skill.image" [value]="skill.value"
-                      *ngFor="let skill of cmsSkills"></dz-skill>
+                              *ngFor="let skill of cmsSkills"></dz-skill>
                   </div>
                 </div>
                 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-12">
                   <h3 class="cv-title subtitle">Graphic</h3>
                   <div class="cv-list">
                     <dz-skill [name]="skill.name" [image]="skill.image" [value]="skill.value"
-                      *ngFor="let skill of graphicSkills"></dz-skill>
+                              *ngFor="let skill of graphicSkills"></dz-skill>
                   </div>
                 </div>
               </div>
@@ -141,7 +141,7 @@
           <div class="cv-projects-container">
             <ng-container *ngFor="let project of opensourceProjects">
               <dz-project-box [name]="project.name" [description]="project.description" [url]="project.url"
-                [image]="project.image" [isInverse]="project.isInverse"></dz-project-box>
+                              [image]="project.image" [isInverse]="project.isInverse"></dz-project-box>
             </ng-container>
           </div>
         </div>
