@@ -1,6 +1,6 @@
 {
   "name": "danielzotti",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -14,7 +14,8 @@
     "dev:ssr": "ng run danielzotti:serve-ssr",
     "serve:ssr": "node dist/server/main.js",
     "build:ssr": "npm run build:prod && ng run danielzotti:server:production",
-    "prerender": "ng run danielzotti:prerender"
+    "prerender": "ng run danielzotti:prerender",
+    "docker:start:local": "docker-compose --file docker-compose.local.yml up --build angular"
   },
   "private": true,
   "dependencies": {
