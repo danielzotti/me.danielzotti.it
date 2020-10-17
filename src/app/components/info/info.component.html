@@ -1,0 +1,6 @@
+<span class="icon fa-stack fa-lg">
+  <i class="fa fas fa-circle fa-stack-2x"></i>
+  <i class="fa-stack-1x {{ icon }}"></i> <!--fa-youtube-play-->
+</span>
+<a *ngIf="link" href="{{link}}" target="_blank" rel="noopener" class="text">{{text}}</a>
+<span *ngIf="!link">{{text}}</span>

@@ -1,0 +1,57 @@
+//BASE
+$font-family-title:Cookie,Georgia,serif !default;
+$font-family-text:'Open Sans Condensed',Verdana,Helvetica,Arial,sans-serif !default;
+
+body {
+    font-family: $font-family-text;
+    min-width: 300px;
+}
+h1,h2,h3,h4,h5,h6 {
+    font-family: $font-family-title;
+    font-weight:normal;
+}
+img {
+    max-width: 100%;
+}
+a {
+    color:$black;
+    text-decoration:none;
+    border-bottom: 1px solid $blue;
+    &:hover, &:focus, &:active {
+        color:$blue;
+        cursor: pointer;
+        text-decoration:none;
+    }
+}
+
+.beta {
+    display: inline-block;
+    z-index: 1;
+    font-size: 18px;
+    position: fixed;
+    color: #fff;
+    top: 5px;
+    right: -120px;
+    text-transform: uppercase;
+    transform: rotate(45deg);
+    transform-origin: center;
+    padding: 5px 120px;
+    background-color:$red;
+    box-shadow: 3px 3px 10px -1px rgba(0,0,0,0.75);
+}
+
+.version {
+    display: inline-block;
+    z-index: 1;
+    font-size: 14px;
+    position: fixed;
+    text-align: center;
+    color: #fff;
+    top: 5px;
+    right: -130px;
+    transform: rotate(45deg);
+    transform-origin: center;
+    padding: 5px 130px;
+    background-color:$red;
+    box-shadow: 3px 3px 10px -1px rgba(0,0,0,0.75);
+}

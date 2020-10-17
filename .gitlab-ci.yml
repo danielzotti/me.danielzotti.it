@@ -1,0 +1,21 @@
+cache:
+  paths:
+    - node_modules/
+
+deploy_test:
+  stage: deploy
+  environment: Test
+  script: "PORT=16003 CONFIGURATION=dev docker-compose -f docker-compose.deploy.yml -p danielzotti_dev up -d --build"
+  only:
+    - dev
+  tags:
+    - "contabo"
+
+deploy_prod:
+  stage: deploy
+  environment: Production
+  script: "PORT=16004 CONFIGURATION=production docker-compose -f docker-compose.deploy.yml -p danielzotti_production up -d --build"
+  only:
+    - tags
+  tags:
+    - "ovh"

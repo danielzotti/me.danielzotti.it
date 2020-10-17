@@ -1,0 +1,41 @@
+@import "colors.scss";
+@import "variables.scss";
+
+:host {
+    
+}
+
+.box {
+    display: block;
+    border:2px solid black;
+    border-radius: 4px;
+    padding:10px;
+    transition: transform 0.1s ease-in-out;
+    &:hover {
+        color:$blue;
+        border-color:$blue;
+        transform: scale3d(1.02,1.02,1.02);
+    }
+    @media(max-width:$xs-max){
+        margin:0 auto;
+        max-width: 300px;
+    }
+    &.inverse {
+        background-color:lighten($blue,40%);
+        &:hover {
+            color:$black;
+        }
+    }
+}
+.box-title {
+    font-weight: bold;
+    margin-top:0;
+}
+.box-image {
+    display: block;
+    max-width: 200px;
+}
+.box-description {
+    margin-bottom:0;
+    font-size: 15px;
+}

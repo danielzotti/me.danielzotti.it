@@ -1,0 +1,33 @@
+@import "colors.scss";
+
+:host {
+
+}
+.skill-image {
+    vertical-align: middle;
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+    text-align: center;
+    img {
+        width: 80px;
+        height: 80px;
+    }
+}
+.skill-value {
+    vertical-align: middle;
+    margin-left: 10px;
+    i {
+        border-radius: 50%;
+        background-color: $gray;
+        display: inline-block;
+        vertical-align: middle;
+        height:10px;
+        width:10px;
+        margin-right:2px;
+        &.x {
+            background-color: $black;
+        }
+    }
+}
