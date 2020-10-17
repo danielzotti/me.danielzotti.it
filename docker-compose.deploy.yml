@@ -7,7 +7,7 @@ services:
       dockerfile: Dockerfile
       args:
         - configuration=${CONFIGURATION}
-    container_name: danielzotti
+    container_name: danielzotti_${CONFIGURATION}
     image: dz/danielzotti
     ports:
       - "${PORT}:4000"
