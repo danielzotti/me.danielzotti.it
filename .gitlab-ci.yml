@@ -18,4 +18,4 @@ deploy_prod:
   only:
     - tags
   tags:
-    - "ovh"
+    - "contabo"
