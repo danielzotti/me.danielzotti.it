@@ -4,7 +4,7 @@ cache:
 
 deploy_test:
   stage: deploy
-  environment: Test
+  environment: Dev
   script: "PORT=16003 CONFIGURATION=dev docker-compose -f docker-compose.deploy.yml -p danielzotti_dev up -d --build"
   only:
     - dev

@@ -8,7 +8,7 @@ services:
       args:
         - configuration=${CONFIGURATION}
     container_name: danielzotti_${CONFIGURATION}
-    image: dz/danielzotti
+    image: dz/danielzotti_${CONFIGURATION}
     ports:
       - "${PORT}:4000"
     restart: unless-stopped
