@@ -7,8 +7,8 @@ services:
       dockerfile: Dockerfile
       args:
         - configuration=${CONFIGURATION}
-    container_name: me_danielzotti_it
-    image: dz/me_danielzotti_it
+    container_name: danielzotti
+    image: dz/danielzotti
     ports:
       - "${PORT}:4000"
     restart: unless-stopped

@@ -5,8 +5,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.local
-    container_name: me_danielzotti_it_local
-    image: dz/me_danielzotti_it_local
+    container_name: danielzotti_local
+    image: dz/danielzotti_local
     ports:
       - "4201:4201"
     restart: unless-stopped

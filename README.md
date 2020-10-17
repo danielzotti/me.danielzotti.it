@@ -84,8 +84,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.local
-    container_name: me_danielzotti_it_local
-    image: dz/me_danielzotti_it_local
+    container_name: danielzottit_local
+    image: dz/danielzotti_local
     ports:
       - "4201:4201"
     restart: unless-stopped
@@ -105,8 +105,8 @@ services:
       dockerfile: Dockerfile
       args:
         - configuration=${CONFIGURATION}
-    container_name: me_danielzotti_it
-    image: dz/me_danielzotti_it
+    container_name: danielzotti
+    image: dz/danielzotti
     ports:
       - "${PORT}:80"
     restart: unless-stopped
