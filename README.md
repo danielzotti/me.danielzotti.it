@@ -13,10 +13,6 @@ Tehcnologies used:
     - `npm run start` aka `ng serve`
 - Local development: every change to code it refreshes
     - `npm run docker:start:local`
-- Dev version served by nginx
-    - `npm run docker:start:dev`
-- Prod version served by nginx
-    - `npm run docker:start:prod`
 
 ## Configuration files
 
