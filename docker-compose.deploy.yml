@@ -9,6 +9,8 @@ services:
         - configuration=${CONFIGURATION}
     container_name: danielzotti_${CONFIGURATION}
     image: dz/danielzotti_${CONFIGURATION}
-    ports:
-      - "${PORT}:4000"
+    expose:
+      - 4000
+#    ports:
+#      - "${PORT}:4000"
     restart: unless-stopped
