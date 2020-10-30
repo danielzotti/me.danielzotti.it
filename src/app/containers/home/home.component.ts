@@ -1,5 +1,4 @@
-import { Component, OnInit, HostListener } from '@angular/core';
-import { HttpClient, HttpErrorResponse, HttpResponse } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
 import { version } from '../../../../package.json';
 
 @Component({
@@ -22,9 +21,7 @@ export class HomeComponent implements OnInit {
 
     public version: string = version;
 
-    constructor(
-        private http: HttpClient,
-    ) { }
+    constructor() { }
 
     ngOnInit() {
         // FONT AWESOME 4
@@ -140,25 +137,4 @@ export class HomeComponent implements OnInit {
         this.personalInfoRight = this.personalInfo.slice();
         this.personalInfoLeft = this.personalInfoRight.splice(0, halfInfoCount);
     }
-
-    // @HostListener('window:scroll', [])
-    // onWindowScroll() {
-    //     this.playVideo();
-    // }
-    // @HostListener('document:mousemove', [])
-    // onMouseMove() {
-    //     this.playVideo();
-    // }
-    // @HostListener('document:touchstart', [])
-    // onTouchStart() {
-    //     this.playVideo();
-    // }
-
-    // playVideo() {
-    //     if (!this.isPlayingVideo) {
-    //         console.log('let\'s play the video!');
-    //         (document.querySelector('#video-daniel') as HTMLVideoElement).play()
-    //         this.isPlayingVideo = true;
-    //     }
-    // }
 }

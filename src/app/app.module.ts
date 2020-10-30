@@ -1,8 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-import {CommonModule} from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
 
 // APP
 import { AppRoutingModule } from './app.routing';
@@ -20,34 +18,34 @@ import { ProjectBoxComponent } from './components/project/project-box.component'
 import { InfoComponent } from './components/info/info.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { VideoprofileComponent } from './components/videoprofile/videoprofile.component';
 
 @NgModule({
-    imports: [
-        // Angular
-        BrowserModule.withServerTransition({ appId: 'serverApp' }),
-        BrowserAnimationsModule,
-        // HttpModule,
-        HttpClientModule,
-        CommonModule,
+  imports: [
+    // Angular
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
+    CommonModule,
 
-        // App
-        AppRoutingModule,
+    // App
+    AppRoutingModule,
 
-        // Custom
-        DzCoffeeModule,
+    // Custom
+    DzCoffeeModule,
 
-        ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
-    ],
-    declarations: [
-        // Containers
-        AppComponent,
-        HomeComponent,
-        // Components
-        SkillComponent,
-        ProjectBoxComponent,
-        InfoComponent,
-    ],
-    providers: [ ],
-    bootstrap: [ AppComponent ]
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
+  ],
+  declarations: [
+    // Containers
+    AppComponent,
+    HomeComponent,
+    // Components
+    SkillComponent,
+    ProjectBoxComponent,
+    InfoComponent,
+    VideoprofileComponent
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
