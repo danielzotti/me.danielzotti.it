@@ -13,6 +13,7 @@
           "/assets/images/**",
           "/assets/videoprofile/videoprofile.gif",
           "/favicon.png",
+          "/favicon-apple.png",
           "/index.html",
           "/*.css",
           "/*.js",

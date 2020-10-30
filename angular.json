@@ -49,6 +49,7 @@
             "aot": true,
             "assets": [
               "src/favicon.png",
+              "src/favicon-apple.png",
               "src/assets",
               "src/robots.txt",
               "src/manifest.webmanifest"
