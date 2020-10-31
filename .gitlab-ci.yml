@@ -7,7 +7,7 @@ deploy_test:
   environment: Dev
   script: "CONFIGURATION=dev docker-compose -f docker-compose.deploy.yml -p danielzotti_dev up -d --build"
   only:
-    - dev
+    - deploy_dev
   tags:
     - "contabo"
 
@@ -16,6 +16,6 @@ deploy_prod:
   environment: Production
   script: "CONFIGURATION=production docker-compose -f docker-compose.deploy.yml -p danielzotti_production up -d --build"
   only:
-    - tags
+    - deploy_prod
   tags:
     - "contabo"
