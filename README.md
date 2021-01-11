@@ -1,6 +1,17 @@
-# danielzotti
-This is my personal website.
-Tehcnologies used:
+# My personal website <3
+
+Inspired by [this article](https://dev.to/victoria/be-brave-and-build-in-public-5afg) written by Victoria Drake, I decided to share my personal website's code.
+
+## DISCLAIMER
+
+The website itself (the Angular code) is really stupid, and I haven't spent too much time on that. I develop Angular code better than that, I swear! :D
+
+I also use this website for testing and trying new technologies (which can be found in the next chapter).
+
+***Please don't try to hack my website <3***
+
+## The technologies I've used:
+
 - Angular 10
 - SSR
 - PWA
@@ -9,15 +20,18 @@ Tehcnologies used:
 - GitLab CI
 
 # TL;DR
+
 - Local development (**without docker**) with "classic" Angular CLI
-    - `npm run start` aka `ng serve`
+  - `npm run start` aka `ng serve`
 - Local development: every change to code it refreshes
-    - `npm run docker:start:local`
+  - `npm run docker:start:local`
 
 ## Configuration files
 
 ### nginx
+
 Always return the index.html file (for SPA): `nginx-custom.conf`
+
 ```
 server {
   listen 80;
@@ -28,9 +42,11 @@ server {
   }
 }
 ```
+
 ### Docker
 
 #### `.dockerignore`
+
 ```
 .env
 .git
@@ -41,6 +57,7 @@ node_modules
 ```
 
 #### `Dockerfile.local` (local development use)
+
 ```
 FROM node:14.12.0-alpine
 WORKDIR /app
@@ -54,6 +71,7 @@ CMD ng serve --host 0.0.0.0 --port 4201
 ```
 
 #### `Dockerfile` (deploy on server)
+
 ```
 # Stage 0, "build-stage", based on Node.js, to build and compile Angular
 FROM node:14.12.0-alpine as build-stage
@@ -72,6 +90,7 @@ COPY ./nginx-custom.conf /etc/nginx/conf.d/default.conf
 ```
 
 #### `docker-compose.local.yml`
+
 ```
 version: '3'
 
@@ -91,6 +110,7 @@ services:
 ```
 
 #### `docker-compose.deploy.yml`
+
 ```
 version: '3'
 
@@ -107,8 +127,11 @@ services:
       - "${PORT}:80"
     restart: unless-stopped
 ```
+
 ## Docker `permission denied` error
+
 For Linux console:
+
 ```
 sudo groupadd docker
 sudo usermod -aG docker ${USER}
@@ -116,7 +139,13 @@ newgrp docker
 su - ${USER}
 ```
 
+# Easter Egg
+
+There is an Easter egg that you can discover simply reading the code or browsing the website at a certain time (08:
+30-09:00, 11:00-11:20, 16:00-16:20).
+
 # Thanks to
+
 - [Angular in Docker with Nginx, supporting configurations / environments, built with multi-stage Docker builds and testing with Chrome Headless](https://medium.com/@tiangolo/angular-in-docker-with-nginx-supporting-environments-built-with-multi-stage-docker-builds-bb9f1724e984)
 - [Angular — Local Development With Docker-Compose](https://medium.com/bb-tutorials-and-thoughts/angular-local-development-with-docker-compose-13719b998e424)
 - [Docker ARG, ENV and .env - a Complete Guide](https://vsupalov.com/docker-arg-env-variable-guide)
