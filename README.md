@@ -2,6 +2,8 @@
 
 Inspired by [this article](https://dev.to/victoria/be-brave-and-build-in-public-5afg) written by Victoria Drake, I decided to share my personal website's code.
 
+![Website preview](https://raw.githubusercontent.com/danielzotti/me.danielzotti.it/master/daniel-zotti-website-preview.png)
+
 ## DISCLAIMER
 
 The website itself (the Angular code) is really stupid, and I haven't spent too much time on that. I develop Angular code better than that, I swear! :D
