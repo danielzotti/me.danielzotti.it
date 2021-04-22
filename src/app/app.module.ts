@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
 import { AppRoutingModule } from './app.routing';
 
 // MODULES
+import { ConnectionStatusCheckerModule } from './modules/connection-status-checker/connection-status-checker.module';
 import { DzCoffeeModule } from './modules/coffee/coffee.module';
 
 // CONTAINERS
@@ -20,6 +21,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { VideoprofileComponent } from './components/videoprofile/videoprofile.component';
 
+
 @NgModule({
   imports: [
     // Angular
@@ -31,6 +33,7 @@ import { VideoprofileComponent } from './components/videoprofile/videoprofile.co
 
     // Custom
     DzCoffeeModule,
+    ConnectionStatusCheckerModule,
 
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
