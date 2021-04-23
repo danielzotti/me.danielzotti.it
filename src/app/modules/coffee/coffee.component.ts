@@ -6,14 +6,15 @@ import {
   ElementRef,
   HostListener,
   ViewChild,
-  ChangeDetectorRef
-} from "@angular/core";
+  ChangeDetectorRef, Inject, PLATFORM_ID
+} from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 
 
 @Component({
-  selector: "dz-coffee",
-  templateUrl: "./coffee.component.html",
-  styleUrls: ["./coffee.component.scss"]
+  selector: 'dz-coffee',
+  templateUrl: './coffee.component.html',
+  styleUrls: ['./coffee.component.scss']
 })
 export class DzCoffeeComponent implements OnInit, AfterViewInit {
   // static defaultContent =
@@ -22,7 +23,7 @@ export class DzCoffeeComponent implements OnInit, AfterViewInit {
   isVisible = false;
   isHidden = true;
   checkTimeIntervalId;
-  typing = "";
+  typing = '';
   keyword: string;
   $el: HTMLElement;
   messageOnShow;
@@ -35,27 +36,34 @@ export class DzCoffeeComponent implements OnInit, AfterViewInit {
     onTime: false,
     onLoad: false,
     onHash: false,
-    containerClass: "coffee-time",
-    keyword: "coffee",
-    customMessageOnShow: "It is coffee time!",
-    customMessageOnHide: "Coffee time it is finished",
-    coffeeHours: ["08:30-09:00", "11:00-11:20", "16:00-16:20"]
+    containerClass: 'coffee-time',
+    keyword: 'coffee',
+    customMessageOnShow: 'It is coffee time!',
+    customMessageOnHide: 'Coffee time it is finished',
+    coffeeHours: ['08:00-09:00', '11:00-11:20', '16:00-16:20']
   };
+
+  isBrowser: boolean;
 
   @Input()
   settings: ICoffeeSettings;
 
-  @ViewChild("customContent") content;
+  @ViewChild('customContent') content;
 
   constructor(
     private element: ElementRef,
-    private cdRef: ChangeDetectorRef
+    private cdRef: ChangeDetectorRef,
+    @Inject(PLATFORM_ID) private platformId: Object
   ) {
     this.$el = this.element.nativeElement;
+    this.isBrowser = isPlatformBrowser(platformId);
   }
 
   ngOnInit() {
-    if (this.settings) {
+    if(!this.isBrowser) {
+      return;
+    }
+    if(this.settings) {
       this.settings = { ...this.defaultSettings, ...this.settings };
     } else {
       this.settings = { ...this.defaultSettings };
@@ -64,7 +72,10 @@ export class DzCoffeeComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    if (this.$el) {
+    if(!this.isBrowser) {
+      return;
+    }
+    if(this.$el) {
       this.initView();
     }
   }
@@ -73,27 +84,26 @@ export class DzCoffeeComponent implements OnInit, AfterViewInit {
     this.checkIfHasCustomContent();
 
     // Show Icon immediately
-    if (this.settings.onLoad) {
+    if(this.settings.onLoad) {
       this.showIcon();
     }
 
     // Show Icon if url has #{keyword} (e.g. #coffee)
-    if (this.settings.onHash) {
+    if(this.settings.onHash) {
       this.checkHash();
     }
 
     // Check Time
-    if (this.settings.onTime) {
+    if(this.settings.onTime) {
       this.checkTimeIntervalId = setInterval(() => {
         this.checkTime();
       }, 3000);
     }
-
     this.cdRef.detectChanges();
   }
 
   checkIfHasCustomContent(): boolean {
-    if (
+    if(
       this.content &&
       this.content.nativeElement &&
       this.content.nativeElement.children.length > 0
@@ -105,7 +115,7 @@ export class DzCoffeeComponent implements OnInit, AfterViewInit {
   }
 
   checkHash() {
-    if (window.location.hash.toLowerCase() === "#" + this.keyword) {
+    if(window.location.hash.toLowerCase() === '#' + this.keyword) {
       this.showIcon(false);
     }
   }
@@ -113,22 +123,22 @@ export class DzCoffeeComponent implements OnInit, AfterViewInit {
   checkTime() {
     const coffeeHours = this.settings.coffeeHours;
 
-    if (coffeeHours && coffeeHours.length > 0) {
-      for (let i = 0; i < coffeeHours.length; i++) {
+    if(coffeeHours && coffeeHours.length > 0) {
+      for(let i = 0; i < coffeeHours.length; i++) {
         const time = coffeeHours[i];
 
-        const start = time.split("-")[0];
-        const end = time.split("-")[1];
-        const startHours = parseInt(start.split(":")[0], 10);
-        const startMinutes = parseInt(start.split(":")[1], 10);
-        const endHours = parseInt(end.split(":")[0], 10);
-        const endMinutes = parseInt(end.split(":")[1], 10);
+        const start = time.split('-')[0];
+        const end = time.split('-')[1];
+        const startHours = parseInt(start.split(':')[0], 10);
+        const startMinutes = parseInt(start.split(':')[1], 10);
+        const endHours = parseInt(end.split(':')[0], 10);
+        const endMinutes = parseInt(end.split(':')[1], 10);
 
         const startTime = new Date().setHours(startHours, startMinutes, 0);
         const endTime = new Date().setHours(endHours, endMinutes, 0);
         const currentTime = new Date().getTime();
 
-        if (currentTime >= startTime && currentTime <= endTime) {
+        if(currentTime >= startTime && currentTime <= endTime) {
           this.showIcon();
           return;
         }
@@ -137,27 +147,27 @@ export class DzCoffeeComponent implements OnInit, AfterViewInit {
     }
   }
 
-  @HostListener("document:keypress", ["$event"])
+  @HostListener('document:keypress', ['$event'])
   checkTyping(event) {
-    if (!this.settings.onTyping) {
+    if(!this.settings.onTyping) {
       return;
     }
-    if (
+    if(
       (event.keyCode >= 48 && event.keyCode <= 57) || // number
       (event.keyCode >= 65 && event.keyCode <= 90) || // letter uppercase
       (event.keyCode >= 97 && event.keyCode <= 122) // letter lowercase
     ) {
-      if (typeof this.typing === "undefined") {
-        this.typing = "";
+      if(typeof this.typing === 'undefined') {
+        this.typing = '';
       }
       this.typing += String.fromCharCode(event.which).toLowerCase();
 
-      if (this.typing.match(this.keyword)) {
+      if(this.typing.match(this.keyword)) {
         this.showIcon(false);
       }
     }
 
-    if (event.keyCode === 27) {
+    if(event.keyCode === 27) {
       // ESC
       clearInterval(this.checkTimeIntervalId);
       this.hideIcon(false);
@@ -168,27 +178,27 @@ export class DzCoffeeComponent implements OnInit, AfterViewInit {
     this.isHidden = false;
     // Il setTimeout serve per far attivare l'icona al prossimo ciclo
     setTimeout(() => {
-      if (this.isVisible) {
+      if(this.isVisible) {
         return;
       }
       this.isVisible = true;
-      if (showMessage !== false) {
+      if(showMessage !== false) {
         console.log(this.messageOnShow);
       }
     }, 0);
   }
 
   hideIcon(showMessage = false) {
-    if (!this.isVisible) {
+    if(!this.isVisible) {
       return;
     }
     this.isVisible = false;
-    this.typing = "";
-    if (showMessage !== false) {
+    this.typing = '';
+    if(showMessage !== false) {
       console.log(this.messageOnHide);
     }
 
-    if (this.checkTimeIntervalId) {
+    if(this.checkTimeIntervalId) {
       clearInterval(this.checkTimeIntervalId);
     }
     // Il setTimeout serve per far finire la transition CSS e poi nascondere l'icona

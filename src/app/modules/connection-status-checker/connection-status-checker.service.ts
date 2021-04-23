@@ -1,21 +1,25 @@
-import { Injectable, OnInit } from '@angular/core';
-import { Subject } from 'rxjs';
+import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
+import { isPlatformBrowser } from '@angular/common';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ConnectionStatusCheckerService {
 
-  private readonly statusChangedSubject: Subject<'online' | 'offline'> = new Subject<'online' | 'offline'>();
+  private readonly statusChangedSubject: BehaviorSubject<'online' | 'offline'> = new BehaviorSubject<'online' | 'offline'>('online');
   readonly statusChanged$ = this.statusChangedSubject.asObservable();
 
-  status: 'online' | 'offline';
+  status: 'online' | 'offline' = 'online';
 
-  constructor() {
-    window.addEventListener('load', () => {
-      window.addEventListener('online', this.updateStatus);
-      window.addEventListener('offline', this.updateStatus);
-    });
+  constructor(@Inject(PLATFORM_ID) platformId: Object) {
+
+    if(isPlatformBrowser(platformId)) {
+      window.addEventListener('load', () => {
+        window.addEventListener('online', this.updateStatus);
+        window.addEventListener('offline', this.updateStatus);
+      });
+    }
   }
 
   private updateStatus = (event) => {

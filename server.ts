@@ -43,7 +43,7 @@ function run() {
   // Start up the Node server
   const server = app();
   server.listen(port, () => {
-    console.log(`Node Express server listening on http://localhost:${port}`);
+    console.log(`Node Express server listening on http://localhost:${ port }`);
   });
 }
 
@@ -53,7 +53,7 @@ function run() {
 declare const __non_webpack_require__: NodeRequire;
 const mainModule = __non_webpack_require__.main;
 const moduleFilename = mainModule && mainModule.filename || '';
-if (moduleFilename === __filename || moduleFilename.includes('iisnode')) {
+if(moduleFilename === __filename || moduleFilename.includes('iisnode')) {
   run();
 }
 
