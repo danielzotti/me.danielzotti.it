@@ -93,7 +93,7 @@ export class HomeComponent implements OnInit {
             },
             {
                 name: 'ng-input-number-18n',
-                description: 'Angular directive which manages decimal numbers',
+                description: 'Angular directive which manages numbers',
                 url: 'https://github.com/danielzotti/ng-input-number-i18n',
                 image: 'assets/images/github.png'
             },

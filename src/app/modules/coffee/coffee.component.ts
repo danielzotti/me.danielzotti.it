@@ -209,14 +209,14 @@ export class DzCoffeeComponent implements OnInit, AfterViewInit {
 }
 
 export interface ICoffeeSettings {
-  onTyping: boolean;
-  onTime: boolean;
-  onLoad: boolean;
-  onHash: boolean;
-  containerClass: string; // 'coffee-time'
+  onTyping?: boolean;
+  onTime?: boolean;
+  onLoad?: boolean;
+  onHash?: boolean;
+  containerClass?: string; // 'coffee-time'
   // content?: string; // '<svg ..../>'
-  keyword: string; // 'coffee'
-  customMessageOnShow: string; // 'It\'s coffee time!'
-  customMessageOnHide: string; // 'Coffee time it\'s finished'
-  coffeeHours: Array<string>; // ['11:00-11:15', '16:00-16:15']
+  keyword?: string; // 'coffee'
+  customMessageOnShow?: string; // 'It\'s coffee time!'
+  customMessageOnHide?: string; // 'Coffee time it\'s finished'
+  coffeeHours?: Array<string>; // ['11:00-11:15', '16:00-16:15']
 }

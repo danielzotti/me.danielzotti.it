@@ -15,7 +15,6 @@ export class ConnectionStatusCheckerService {
   constructor(@Inject(PLATFORM_ID) platformId: Object) {
 
     if(isPlatformBrowser(platformId)) {
-      this.updateStatus();
       window.addEventListener('load', () => {
         window.addEventListener('online', this.updateStatus);
         window.addEventListener('offline', this.updateStatus);
@@ -23,8 +22,7 @@ export class ConnectionStatusCheckerService {
     }
   }
 
-  private updateStatus = (event?: Event) => {
-    console.log({ status: navigator.onLine });
+  private updateStatus = (event: Event) => {
     this.status = navigator.onLine ? 'online' : 'offline';
     this.statusChangedSubject.next(this.status);
   };
