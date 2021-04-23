@@ -14,9 +14,9 @@ I also use this website for testing and trying new technologies (which can be fo
 
 ## The technologies I've used:
 
-- Angular 10
+- Angular 11
 - SSR
-- PWA
+- PWA + offline status detection
 - Docker
 - GitHub Actions
 - GitLab CI
