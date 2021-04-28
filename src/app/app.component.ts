@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { SwUpdate } from '@angular/service-worker';
 import { ConnectionStatusCheckerService } from './modules/connection-status-checker/connection-status-checker.service';
+import { DOCUMENT } from '@angular/common';
 
 @Component({
   selector: 'dz-root',
@@ -8,13 +9,21 @@ import { ConnectionStatusCheckerService } from './modules/connection-status-chec
   styleUrls: ['app.component.scss']
 })
 export class AppComponent {
-  title = 'danielzotti';
 
   isOffline: boolean;
 
-  constructor(private swUpdate: SwUpdate, private connectionStatusChecker: ConnectionStatusCheckerService) {
+  constructor(private swUpdate: SwUpdate,
+              private connectionStatusChecker: ConnectionStatusCheckerService,
+              @Inject(DOCUMENT) private document: Document) {
     this.connectionStatusChecker.statusChanged$.subscribe(status => {
       this.isOffline = status == 'offline';
+
+      if(this.isOffline) {
+        this.document.querySelector('html').classList.add('is-offline')
+      }
+      else {
+        this.document.querySelector('html').classList.remove('is-offline')
+      }
     });
   }
 
