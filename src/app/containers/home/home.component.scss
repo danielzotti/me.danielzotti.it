@@ -74,6 +74,11 @@
     float: left;
     width: 33.33%;
   }
+  .cv-list {
+    @media(min-width: $md-min) {
+      margin-top: 50px;
+    }
+  }
 
 }
 
@@ -82,6 +87,14 @@
   @media(min-width: $md-min) {
     float: left;
     width: 66.67%;
+  }
+}
+
+.cv-skills {
+  & > .row {
+    @media(min-width: $md-min) {
+      margin-top: $margin-big;
+    }
   }
 }
 
