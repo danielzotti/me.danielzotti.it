@@ -1,61 +1,131 @@
 @import "variables";
-.videoprofile {
-    text-align: center;
-    
+@import "layout";
 
-    video {
-        max-width: 100%;
-    }
+.videoprofile {
+  text-align: center;
+
+  video {
+    max-width: 100%;
+  }
 }
 
 .banner {
-    .videoprofile, .logo, .name, .brand {
-        display: inline-block;
-        vertical-align: middle;
-    }
-    .videoprofile {
-        width: 100%;
-        max-width: 220px;
-        @media(min-width:$sm-min){
-            width: 40%;
-        }
-        @media(min-width:$md-min){
-            width: 50%;
-        }
-        img {
-            width: 100%;
-        }
+  .videoprofile, .logo, .name, .brand {
+    display: inline-block;
+    vertical-align: middle;
+  }
 
+  .videoprofile {
+    width: 100%;
+    max-width: 220px;
+    @media(min-width: $sm-min) {
+      width: 40%;
     }
-    .brand {
-        @media(min-width:$sm-min){
-            width: 60%;
-        }
-        @media(min-width:$md-min){
-            width: 50%;
-        }
-        @media(min-width:$xs-min) and (max-width:$xs-max) {
-            margin-bottom: 20px;
-        }
+    @media(min-width: $md-min) {
+      width: 50%;
     }
-    .name {
-        margin:0;
-        @media(max-width:$xs-max){
-            font-size: 40px;
-        }
+
+    img {
+      width: 100%;
     }
+
+  }
+
+  .brand {
+    @media(min-width: $sm-min) {
+      width: 60%;
+    }
+    @media(min-width: $md-min) {
+      width: 50%;
+    }
+    @media(min-width: $xs-min) and (max-width: $xs-max) {
+      margin-bottom: 20px;
+    }
+  }
+
+  .name {
+    margin: 0;
+    @media(max-width: $xs-max) {
+      font-size: 40px;
+    }
+  }
 }
+
+
 .cv-opensource-projects {
-    font-size:0;
-    margin-left: -10px;
-    margin-right: -10px;
-    dz-project-box {
-        display: block;
-        padding:10px;
-        @media(min-width:$sm-min){
-            vertical-align: top;
-            display: inline-block;
-            width: 50%;
-        }
+  font-size: 0;
+  margin-left: -10px;
+  margin-right: -10px;
+
+  dz-project-box {
+    display: block;
+    padding: 10px;
+    @media(min-width: $sm-min) {
+      vertical-align: top;
+      display: inline-block;
+      width: 50%;
     }
+  }
 }
+
+.cv-info {
+  @extend .col;
+  @media(min-width: $md-min) {
+    float: left;
+    width: 33.33%;
+  }
+
+}
+
+.cv-skills-and-project {
+  @extend .col;
+  @media(min-width: $md-min) {
+    float: left;
+    width: 66.67%;
+  }
+}
+
+.skill-frontend {
+  @extend .col;
+  @media(min-width: $sm-min) {
+    float: left;
+    width: 50%;
+  }
+  @media(min-width: $lg-min) {
+    width: 33.33%;
+  }
+}
+
+.skill-backend {
+  @extend .col;
+  @media(min-width: $sm-min) {
+    float: left;
+    width: 50%;
+  }
+  @media(min-width: $lg-min) {
+    width: 33.33%;
+  }
+}
+
+.skill-cms {
+  @extend .col;
+  @media(min-width: $sm-min) {
+    float: left;
+    width: 50%;
+  }
+  @media(min-width: $lg-min) {
+    width: 33.33%;
+  }
+}
+
+.skill-graphic {
+  @extend .col;
+  @media(min-width: $sm-min) {
+    float: left;
+    width: 50%;
+  }
+  @media(min-width: $md-min) {
+    width: 33.33%;
+  }
+}
+

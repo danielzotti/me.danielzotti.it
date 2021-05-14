@@ -1,4 +1,3 @@
-<!--<span class="beta">beta</span>-->
 <span class="version">v{{version}}</span>
 <div class="banner">
   <div class="container">
@@ -7,8 +6,8 @@
         <img src="assets/images/logo-blu-sfumato.png" alt="DZ Logo blu">
       </div>
       <h1 class="name">
-        <div>DANIEL ZOTTI</div>
-        <div class="work">creative web developer</div>
+        <span class="first-last-name">DANIEL ZOTTI</span>
+        <span class="work">creative web developer</span>
       </h1>
     </div>
     <div class="videoprofile">
@@ -31,22 +30,18 @@
 
 <div class="cv-container">
   <div class="container">
-
     <div class="row">
-      <div class="col-xs-12 col-md-4">
-        <div class="cv-info">
-          <h2 class="cv-title">Personal info</h2>
+      <div class="cv-info">
+        <h2 class="cv-title">Personal info</h2>
+        <div class="row">
           <div class="cv-list">
-            <div class="row">
-              <div class="col-xs-12 col-sm-6 col-md-12">
-                <dz-info [icon]="info.icon" [text]="info.text" [link]="info.link" *ngFor="let info of personalInfoLeft">
-                </dz-info>
-              </div>
-              <div class="col-xs-12 col-sm-6 col-md-12">
-                <dz-info [icon]="info.icon" [text]="info.text" [link]="info.link"
-                         *ngFor="let info of personalInfoRight"></dz-info>
-              </div>
-            </div>
+            <dz-info [icon]="info.icon" [text]="info.text" [link]="info.link" *ngFor="let info of personalInfoLeft">
+            </dz-info>
+            <dz-info
+                    *ngFor="let info of personalInfoRight"
+                    [icon]="info.icon"
+                    [text]="info.text"
+                    [link]="info.link"></dz-info>
           </div>
           <div class="cv-download-container">
             <h2 class="cv-title">Curriculum</h2>
@@ -99,53 +94,48 @@
           </div>
         </div>
       </div>
-      <div class="col-xs-12 col-md-8">
+      <div class="cv-skills-and-project">
         <div class="cv-skills">
           <h2 class="cv-title">Professional skills</h2>
           <div class="row">
-            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+            <div class="skill-frontend">
               <h3 class="cv-title subtitle">Frontend</h3>
               <div class="cv-list">
                 <dz-skill [name]="skill.name" [image]="skill.image" [value]="skill.value"
                           *ngFor="let skill of frontendSkills"></dz-skill>
               </div>
             </div>
-            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+            <div class="skill-backend">
               <h3 class="cv-title subtitle">Backend</h3>
               <div class="cv-list">
                 <dz-skill [name]="skill.name" [image]="skill.image" [value]="skill.value"
                           *ngFor="let skill of backendSkills"></dz-skill>
               </div>
             </div>
-
-            <div class="col-xs-12 col-lg-4">
-              <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-12">
-                  <h3 class="cv-title subtitle">CMS</h3>
-                  <div class="cv-list">
-                    <dz-skill [name]="skill.name" [image]="skill.image" [value]="skill.value"
-                              *ngFor="let skill of cmsSkills"></dz-skill>
-                  </div>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-12">
-                  <h3 class="cv-title subtitle">Graphic</h3>
-                  <div class="cv-list">
-                    <dz-skill [name]="skill.name" [image]="skill.image" [value]="skill.value"
-                              *ngFor="let skill of graphicSkills"></dz-skill>
-                  </div>
-                </div>
+            <div class="skill-cms">
+              <h3 class="cv-title subtitle">CMS</h3>
+              <div class="cv-list">
+                <dz-skill [name]="skill.name" [image]="skill.image" [value]="skill.value"
+                          *ngFor="let skill of cmsSkills"></dz-skill>
+              </div>
+            </div>
+            <div class="skill-graphic">
+              <h3 class="cv-title subtitle">Graphic</h3>
+              <div class="cv-list">
+                <dz-skill [name]="skill.name" [image]="skill.image" [value]="skill.value"
+                          *ngFor="let skill of graphicSkills"></dz-skill>
               </div>
             </div>
           </div>
         </div>
         <div class="cv-opensource-projects">
+
           <h2 class="cv-title">Open Source</h2>
           <h3 class="cv-subtitle">my main contribution to the open source community</h3>
           <div class="cv-projects-container">
-            <ng-container *ngFor="let project of opensourceProjects">
-              <dz-project-box [name]="project.name" [description]="project.description" [url]="project.url"
+              <dz-project-box *ngFor="let project of opensourceProjects"
+                              [name]="project.name" [description]="project.description" [url]="project.url"
                               [image]="project.image" [isInverse]="project.isInverse"></dz-project-box>
-            </ng-container>
           </div>
         </div>
       </div>

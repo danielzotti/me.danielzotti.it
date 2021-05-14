@@ -1,0 +1,41 @@
+@import "variables";
+
+.clearfix {
+  &::after {
+    display: block;
+    content: "";
+    clear: both;
+  }
+}
+
+.container {
+  @extend .clearfix;
+  padding-right: $margin-default;
+  padding-left: $margin-default;
+  margin-right: auto;
+  margin-left: auto;
+
+  @media (min-width: $sm-min) {
+    width: $container-sm-min;
+  }
+
+  @media (min-width: $md-min) {
+    width: $container-md-min;
+  }
+
+  @media (min-width: $lg-min) {
+    width: $container-lg-min;
+  }
+}
+
+.row {
+  @extend .clearfix;
+  margin-left: -$margin-default;
+  margin-right: -$margin-default;
+}
+
+.col {
+  @extend .clearfix;
+  padding-left: $margin-default;
+  padding-right: $margin-default;
+}

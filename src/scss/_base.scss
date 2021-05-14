@@ -2,15 +2,34 @@
 $font-family-title: Cookie, Georgia, serif !default;
 $font-family-text: 'Open Sans Condensed', Verdana, Helvetica, Arial, sans-serif !default;
 
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 html {
   &.is-offline {
     filter: grayscale(0.75);
   }
 }
 
-body {
+html, body {
   font-family: $font-family-text;
   min-width: 300px;
+  position: absolute;
+  top:0;
+  bottom:0;
+  right:0;
+  left:0;
+  height: 100%;
+  width:100%;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -18,8 +37,29 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
 }
 
+h1 {
+  font-size:45px;
+}
+h2 {
+  font-size:30px;
+}
+h3 {
+  font-size:24px;
+}
+h4 {
+  font-size:1.3em;
+}
+h5 {
+  font-size:1.2em;
+}
+h6 {
+  font-size:1.1em;
+}
+
+
 img {
   max-width: 100%;
+  height: auto;
 }
 
 a {
@@ -65,3 +105,4 @@ a {
   background-color: $red;
   box-shadow: 3px 3px 10px -1px rgba(0, 0, 0, 0.75);
 }
+
