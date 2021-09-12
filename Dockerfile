@@ -9,9 +9,9 @@ COPY package*.json ./
 
 RUN npm install
 
-USER node
+USER root
 
-RUN npm install -g @angular/cli @angular-devkit/build-angular
+RUN npm install -g @angular/cli@11.2.10 @angular-devkit/build-angular@0.1102.10
 
 # copy all files from workspace into workdir /app
 COPY . .
