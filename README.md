@@ -25,7 +25,7 @@ I also use this website for testing and trying new technologies (which can be fo
 
 - Local development (**without docker**) with "classic" Angular CLI
   - `npm run start` aka `ng serve`
-- Local development: every change to code it refreshes
+- Local development: one every change to code, it refreshes
   - `npm run docker:start:local`
 
 ## Configuration files
