@@ -1,6 +1,12 @@
 //VARIABLES
-$font-family-title:Exo,Georgia,serif;
-$font-family-text:'Roboto Condensed',Verdana,Helvetica,Arial,sans-serif;
+$font-family-title: Exo, Georgia, serif;
+$font-family-text: 'Roboto Condensed', Verdana, Helvetica, Arial, sans-serif;
+
+//MARGINS
+$margin-small: 5px;
+$margin-default: 15px;
+$margin-medium: 30px;
+$margin-big: 60px;
 
 //BREAKPOINT
 $xxs-max: 450px;
@@ -11,3 +17,9 @@ $sm-max: 991px;
 $md-min: $sm-max + 1px;
 $md-max: 1199px;
 $lg-min: $md-max + 1px;
+
+//CONTAINER
+$container-xs-min: $xs-min - (2 * $margin-default);
+$container-sm-min: $sm-min - (2 * $margin-default);
+$container-md-min: $md-min - (2 * $margin-default);
+$container-lg-min: $lg-min - (2 * $margin-default);

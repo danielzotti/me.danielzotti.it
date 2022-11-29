@@ -8,7 +8,6 @@ import { version } from '../../../../package.json';
 })
 export class HomeComponent implements OnInit {
 
-    private user;
     // private isPlayingVideo = false;
     public personalInfo: Array<any>;
     public personalInfoLeft: Array<any>;
@@ -33,23 +32,11 @@ export class HomeComponent implements OnInit {
             { icon: 'fa fa-facebook', text: '/daniel.dada.zotti', link: 'https://www.facebook.com/daniel.dada.zotti' },
             { icon: 'fa fa-youtube-play', text: '/c/danielzotti', link: 'https://www.youtube.com/c/danielzotti' },
             { icon: 'fa fa-twitter', text: '@daniel_zotti', link: 'https://twitter.com/daniel_zotti' },
-            { icon: 'fa fa-instagram', text: '@daniel_zotti', link: 'https://www.instagram.com/daniel_zotti' },
+            { icon: 'fa fa-instagram', text: '@daniel_zotti_dev', link: 'https://www.instagram.com/daniel_zotti_dev' },
         ];
-        // FONT AWESOME 5
-        // this.personalInfo = [
-        //     { icon: 'fas fa-calendar', text: '16/04/1987' },
-        //     { icon: 'fas fa-map-marker', text: 'Trieste, Italy' },
-        //     { icon: 'fab fa-linkedin', text: '/in/danielzotti', link: 'https://www.linkedin.com/in/danielzotti' },
-        //     { icon: 'fab fa-github', text: '/danielzotti', link: 'https://github.com/danielzotti' },
-        //     { icon: 'fab fa-gitlab', text: '/danielzotti', link: 'https://gitlab.com/danielzotti' },
-        //     { icon: 'fab fa-facebook', text: '/daniel.dada.zotti', link: 'https://www.facebook.com/daniel.dada.zotti' },
-        //     { icon: 'fab fa-youtube', text: '/c/danielzotti', link: 'https://www.youtube.com/c/danielzotti' },
-        //     { icon: 'fab fa-twitter', text: '@daniel_zotti', link: 'https://twitter.com/daniel_zotti' },
-        //     { icon: 'fab fa-instagram', text: '@daniel_zotti', link: 'https://www.instagram.com/daniel_zotti' },
-        // ];
         this.backendSkills = [
             { name: 'Linux', image: 'linux', value: 4 },
-            { name: 'NodeJs', image: 'nodejs', value: 2 },
+            { name: 'NodeJs', image: 'nodejs', value: 4 },
             { name: 'Apache', image: 'apache', value: 2 },
             { name: 'MongoDB', image: 'mongodb', value: 2 },
             { name: 'SQL', image: 'sql', value: 3 },
@@ -62,10 +49,12 @@ export class HomeComponent implements OnInit {
             { name: 'CSS3', image: 'css3', value: 5 },
             { name: 'JavaScript', image: 'javascript', value: 5 },
             { name: 'Sass', image: 'sass', value: 5 },
-            { name: 'Bootstrap', image: 'bootstrap', value: 5 },
+            // { name: 'Bootstrap', image: 'bootstrap', value: 5 },
             { name: 'TypeScript', image: 'typescript', value: 3 },
-            { name: 'JQuery', image: 'jquery', value: 5 },
+            // { name: 'JQuery', image: 'jquery', value: 5 },
             { name: 'AngularJS and Angular2', image: 'angular', value: 5 },
+            { name: 'React', image: 'react', value: 4 },
+            { name: 'VueJs', image: 'vue', value: 3 },
         ];
         this.cmsSkills = [
             { name: 'Umbraco', image: 'umbraco', value: 5 },
@@ -128,9 +117,6 @@ export class HomeComponent implements OnInit {
                 url: 'https://github.com/danielzotti?tab=repositories',
                 image: 'assets/images/github.png'
             },
-            // { name: 'Adobe Photoshop', description: 'adobe-photoshop', url: 3 },
-            // { name: 'Adobe Illustrator', description: 'adobe-illustrator', url: 4 },
-            // { name: 'Adobe InDesign', description: 'adobe-indesign', url: 2 },
         ];
 
         const halfInfoCount = Math.ceil(this.personalInfo.length / 2);
