@@ -1,4 +1,12 @@
-# My personal website <3
+# My (OLD) personal website <3
+
+> If you want to browse the repo of the NEW website go [here](https://github.com/danielzotti/new.danielzotti.it).
+
+## NB: In order to visit the old website on [old.danielzotti.it](http://old.danielzotti.it) use the following credentials:
+- username: **guest** 
+- password: **guest**
+
+___
 
 Inspired by [this article](https://dev.to/victoria/be-brave-and-build-in-public-5afg) written by Victoria Drake, I decided to share my personal website's code.
 
